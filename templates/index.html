@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-4">
+    <h2 class="mb-4">📝 Task Manager</h2>
+
+    <form action="/add" method="post" class="row g-3 mb-4">
+        <div class="col-md-5">
+            <input name="task" class="form-control" placeholder="New Task" required>
+        </div>
+        <div class="col-md-4">
+            <input name="category" class="form-control" placeholder="Category" required>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary w-100">Add Task</button>
+        </div>
+    </form>
+
+    <h5>Category Counts:</h5>
+    <ul>
+        {% for cat in category_counts %}
+            <li>{{ cat["category"] }}: {{ cat["count"] }}</li>
+        {% endfor %}
+    </ul>
+
+    <table class="table table-bordered table-hover mt-3">
+        <thead class="table-dark">
+        <tr>
+            <th>Status</th>
+            <th>Task</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td style="font-size: 1.2em;">
+                <a href="/toggle/{{ task['id'] }}">{{ "✅" if task["status"] else "⬜" }}</a>
+            </td>
+            <td>{{ task["task"] }}</td>
+            <td>{{ task["category"] }}</td>
+            <td>
+                <a href="/delete/{{ task['id'] }}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
