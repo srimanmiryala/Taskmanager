@@ -4,8 +4,11 @@ TaskManager is a lightweight web application designed to help users manage their
 🚀 Features
 
 Create Tasks: Add new tasks with ease.
+
 View Tasks: Display a list of all existing tasks.
+
 Delete Tasks: Remove tasks that are no longer needed.
+
 Responsive Design: Accessible on various devices with a clean UI.
 
 🛠️ Technologies Used
@@ -16,6 +19,7 @@ Templating: Jinja2
 Database: (Specify if using SQLite, PostgreSQL, etc.)
 
 📂 Project Structure
+
 Taskmanager/
 ├── templates/
 │   └── index.html
@@ -24,7 +28,9 @@ Taskmanager/
 └── README.md
 
 app.py: Main application file containing route definitions and logic.
+
 templates/index.html: HTML template for rendering the task list.
+
 requirements.txt: Lists Python dependencies.
 
 ⚙️ Installation & Setup
@@ -40,16 +46,23 @@ cd Taskmanager
 Create a Virtual Environment
 
 bash:
+
 python -m venv venv
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 Install Dependencies
 
 bash:
+
 pip install -r requirements.txt
+
 Run the Application
 
 bash:
+
 python app.py
+
 Access the Application
 
 Open your browser and navigate to http://127.0.0.1:5000/ to view the TaskManager.
