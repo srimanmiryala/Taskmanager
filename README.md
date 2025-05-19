@@ -32,7 +32,9 @@ requirements.txt: Lists Python dependencies.
 Clone the Repository
 
 bash:
+
 git clone https://github.com/srimanmiryala/Taskmanager.git
+
 cd Taskmanager
 
 Create a Virtual Environment
